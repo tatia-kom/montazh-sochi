@@ -1,0 +1,95 @@
+@import "layout/var";
+
+.about {
+  margin-top: 160px;
+
+  @media (max-width: $lg) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: $sm) {
+    margin-top: 60px;
+  }
+
+  @media (max-width: $xs) {
+    margin-top: 64px;
+  }
+
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 16px 115px 307px;
+
+    @media (max-width: $lg) {
+      margin-bottom: 250px;
+    }
+
+    @media (max-width: $sm) {
+      margin: 16px 0 180px;
+    }
+
+    @media (max-width: $xs) {
+
+    }
+  }
+
+  &__item {
+    margin-top: 80px;
+    width: 38%;
+
+    @media (max-width: $sm) {
+      width: 45%;
+      margin-top: 30px;
+    }
+
+    @media (max-width: $xs) {
+      margin-top: 32px;
+    }
+
+    &:nth-child(odd) {
+      margin-right: 20%;
+
+      @media (max-width: $sm) {
+        margin-right: 0;
+      }
+    }
+    &:nth-child(even) {
+      margin-left: auto;
+    }
+  }
+
+  &__icon {
+    border: 4px solid #F2F4F6;
+    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 32px;
+
+    @media (max-width: $xs) {
+      font-size: 18px;
+      margin-top: 16px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 160%;
+    color: $grey;
+    margin-top: 24px;
+
+    @media (max-width: $xs) {
+      font-size: 16px;
+      margin-top: 8px;
+      line-height: 140%;
+    }
+  }
+}

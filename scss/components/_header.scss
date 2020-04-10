@@ -1,0 +1,266 @@
+@import "layout/var";
+
+.header {
+  padding: 28px 0;
+
+  @media (max-width: $sm) {
+    padding: 15px 0;
+    height: 67px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+
+    &--opened_menu {
+      height: 126px;
+
+      .header__mobile-menu {
+        display: block;
+
+        span {
+          &:nth-child(1) {
+            transform: rotate(-45deg);
+            margin: 7px 0 0 -5px;
+            width: 32px;
+          }
+          &:nth-child(2) {
+            transform: rotate(45deg);
+            margin: -2px 0 0 -5px;
+            width: 32px;
+          }
+          &:nth-child(3) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $xs) {
+    height: 64px;
+    padding: 14px 0;
+
+    &--opened_menu {
+      height: 256px;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+
+    @media (max-width: $lg) {
+      width: 200px;
+    }
+
+    @media (max-width: $md) {
+      width: 150px;
+    }
+
+    @media (max-width: $xs) {
+      width: 164px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+
+  &__menu {
+    display: flex;
+
+    @media (max-width: $sm) {
+      position: absolute;
+      top: 67px;
+      width: 100%;
+      left: 0;
+      z-index: 300;
+      background: white;
+      justify-content: center;
+      padding-top: 10px;
+      padding-bottom: 15px;
+    }
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+
+  &__link {
+    color: $grey;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 4px solid transparent;
+    padding: 8px 0;
+    margin: 0 16px;
+
+    @media (max-width: $md) {
+      margin: 0 10px;
+      font-size: 12px;
+    }
+
+    @media (max-width: $xs) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      padding: 25px 0 24px;
+      border-bottom: 0;
+      color: $black;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $grey;
+        opacity: 0.16;
+      }
+    }
+
+    &--active, &:hover {
+      border-color: $yellow;
+      color: $black;
+    }
+
+    &--active {
+      @media (max-width: $xs) {
+        background: $yellow;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (max-width: $sm) {
+      margin: 0 30px 0 auto;
+    }
+
+    @media (max-width: $xs) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    color: $black;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    font-size: 18px;
+    padding-bottom: 4px;
+
+    @media (max-width: $md) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $sm) {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    &:hover {
+      border-color: $yellow;
+    }
+  }
+
+  &__call {
+    cursor: pointer;
+    color: $black;
+    position: relative;
+    padding-left: 22px;
+    margin-top: 4px;
+
+    @media (max-width: $md) {
+      font-size: 12px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 11px;
+      height: 11px;
+      background: url('../img/arrow-small-grey.svg');
+      top: 3px;
+      left: 0;
+
+      @media (max-width: $md) {
+        top: 1px;
+      }
+    }
+  }
+
+  &__phone-mobile {
+    display: none;
+
+    @media (max-width: $xs) {
+      display: block;
+      margin-left: auto;
+      margin-right: 20px;
+      padding: 0 19px;
+      height: 36px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -14px;
+        display: block;
+        width: 1px;
+        height: 64px;
+        background: $grey;
+        opacity: 0.16;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -14px;
+        display: block;
+        width: 1px;
+        height: 64px;
+        background: $grey;
+        opacity: 0.16;
+      }
+    }
+  }
+
+  &__mobile-menu {
+    display: none;
+
+    @media (max-width: $sm) {
+      width: 24px;
+      height: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        border-radius: 2px;
+        background: $black;
+        transition: 0.1s;
+      }
+    }
+
+    @media (max-width: $xs) {
+      margin-right: 5px;
+    }
+  }
+}

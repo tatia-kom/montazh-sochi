@@ -1,0 +1,288 @@
+@import "layout/var";
+
+.projects {
+  background: #535B64;
+  padding-bottom: 160px;
+
+  @media (max-width: $lg) {
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: $xs) {
+    padding-bottom: 64px;
+  }
+
+  &__questions {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    width: 878px;
+    padding: 80px 114px;
+    box-shadow: 0px 8px 112px rgba(0, 0, 0, 0.12);
+    margin: 0 auto;
+    transform: translateY(-50%);
+
+    @media (max-width: $sm) {
+      width: 100%;
+      padding: 50px 32px;
+    }
+
+    @media (max-width: $xs) {
+      padding: 40px 24px;
+      padding-bottom: 57px;
+
+      .button {
+        position: absolute;
+        top: 100%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__questions-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: $xs) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__questions-name {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__questions-text {
+    font-size: 18px;
+
+    @media (max-width: $xs) {
+      margin-top: 16px;
+      color: $grey;
+    }
+  }
+
+  &__title {
+    color: white;
+    margin-top: 50px;
+
+    @media (max-width: $lg) {
+      margin-top: 0;
+    }
+
+    @media (max-width: $xs) {
+      text-align: left;
+    }
+  }
+
+  &__slider {
+    margin-left: 115px;
+    margin-top: 96px;
+
+    @media (min-width: 1500px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: $md) {
+      margin-left: 0;
+    }
+
+    @media (max-width: $sm) {
+      margin-top: 60px;
+    }
+
+    @media (max-width: $xs) {
+      margin-top: 48px;
+    }
+  }
+
+  &__slide {
+    outline: none;
+  }
+
+  &__item {
+    display: flex;
+    height: 550px;
+
+    @media (max-width: $md) {
+      height: 450px;
+    }
+
+    @media (max-width: $sm) {
+      flex-direction: column-reverse;
+      height: auto;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding: 50px 55px 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: $sm) {
+      padding: 0 0 30px;
+    }
+  }
+
+  &__name {
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+
+    @media (max-width: $sm) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $xs) {
+      margin-right: 90px;
+      margin-bottom: 48px;
+      height: 56px;
+    }
+  }
+
+  &__text {
+    color: $grey;
+    font-size: 18px;
+    line-height: 160%;
+    margin-top: 32px;
+    overflow: auto;
+
+    @media (max-width: $sm) {
+      height: 200px;
+    }
+
+    @media (max-width: $xs) {
+      height: 290px;
+    }
+
+    p {
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__img {
+    width: 765px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+
+    @media (max-width: $md) {
+      width: 600px;
+    }
+
+    @media (max-width: $sm) {
+      width: 100%;
+      height: 400px;
+    }
+
+    @media (max-width: $xs) {
+      height: 343px;
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 21px;
+    height: 21px;
+    background-size: cover;
+    font-size: 0;
+    color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+
+    @media (max-width: $sm) {
+      left: auto;
+      right: 0;
+    }
+
+    &.slick-prev {
+      background-image: url('../img/arrow-middle-white.svg');
+      transform: scale(-1, 1);
+      z-index: 100;
+
+      @media (max-width: $sm) {
+        right: 48px;
+      }
+    }
+
+    &.slick-next {
+      background-image: url('../img/arrow-middle-white.svg');
+      left: 48px;
+
+      @media (max-width: $sm) {
+        left: auto;
+      }
+    }
+
+    &.slick-disabled {
+      opacity: 0.24;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    @media (max-width: $sm) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    li {
+      margin-right: 8px;
+      display: block;
+      height: 4px;
+
+      button {
+        border: 0;
+        width: 32px;
+        height: 2px;
+        color: transparent;
+        font-size: 0;
+        background: white;
+        opacity: 0.24;
+        transition: 0.3s;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 2px;
+          top: -2px;
+          background: white;
+          opacity: 0;
+          transition: 0.3s;
+        }
+      }
+
+      &.slick-active {
+        button {
+          opacity: 1;
+
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

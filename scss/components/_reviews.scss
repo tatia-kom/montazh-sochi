@@ -1,0 +1,144 @@
+@import "layout/var";
+
+.reviews {
+  padding: 160px 0;
+
+  @media (max-width: $lg) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: $sm) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: $xs) {
+    overflow: hidden;
+    background: #F2F4F6;
+
+    .container {
+      padding: 0;
+    }
+  }
+
+  &__slider {
+    margin: 96px 230px 0;
+    padding-bottom: 60px;
+
+    @media (max-width: $lg) {
+      margin-top: 50px;
+    }
+
+    @media (max-width: $sm) {
+      margin: 30px 64px 0;
+      padding-bottom: 30px;
+    }
+
+    @media (max-width: $xs) {
+      margin: 48px 0 0;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__slide {
+
+  }
+
+  &__img {
+    height: 621px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $xs) {
+      height: 361px;
+    }
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -64px;
+    display: block;
+    width: 64px;
+    height: 64px;
+    background-size: 21px 21px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0;
+    color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &.slick-prev {
+      background-image: url('../img/arrow-middle-black.svg');
+      transform: scale(-1, 1);
+      z-index: 100;
+      left: -64px;
+    }
+
+    &.slick-next {
+      background-image: url('../img/arrow-middle-black.svg');
+      right: -64px;
+    }
+
+    &.slick-disabled {
+      opacity: 0.24;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    li {
+      margin-right: 8px;
+      display: block;
+      height: 4px;
+
+      button {
+        width: 32px;
+        height: 2px;
+        background: $black;
+        opacity: 0.24;
+        transition: 0.3s;
+        display: block;
+        color: transparent;
+        font-size: 0;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 2px;
+          top: -2px;
+          background: $black;
+          opacity: 0;
+          transition: 0.3s;
+        }
+      }
+
+      &.slick-active {
+        button {
+          opacity: 1;
+
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
