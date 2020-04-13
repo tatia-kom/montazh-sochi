@@ -1,3 +1,5 @@
+var myMap;
+
 $(document).ready(function() {
 
     $('.tel-input').inputmask({
@@ -11,6 +13,10 @@ $(document).ready(function() {
 
     $(window).resize(function() {
         restructSlider();
+
+        myMap.destroy();
+
+        initMap();
     });
 
     $('.header__mobile-menu').click(function(e) {
@@ -57,38 +63,7 @@ $(document).ready(function() {
 
     // map
 
-    ymaps.ready(function () {
-        var myMap = new ymaps.Map('map', {
-            center: [43.611423, 39.730661],
-            zoom: 16,
-            controls: ['zoomControl']
-        });
-
-        var newcoord = myMap.getGlobalPixelCenter();
-
-        if (window.innerWidth < 768) {
-            newcoord[1] += 200;
-        }
-        else {
-            newcoord[0] -= 420;
-        }
-        myMap.setGlobalPixelCenter(newcoord);
-
-        var myPlacemark = new ymaps.Placemark([43.611423, 39.730661], {}, {
-            iconLayout: 'default#image',
-            iconImageHref: 'img/mark.svg',
-            iconImageSize: [33, 47],
-            iconImageOffset: [-16, -47]
-        });
-
-        myMap.geoObjects.add(myPlacemark);
-
-        myMap.balloon.open([43.612323, 39.730661], '<div class="contacts__mark-name">Адрес</div><div class="contacts__mark-address">Сочи, Гагарина 67а</div>', {
-            closeButton: false
-        });
-
-        myMap.behaviors.disable('scrollZoom');
-    });
+    initMap();
 
     // modal
 
@@ -160,4 +135,39 @@ function restructSlider() {
             $(this).find('.projects__content').prepend($(this).find('.projects__name'));
         });
     }
+}
+
+function initMap() {
+    ymaps.ready(function () {
+        myMap = new ymaps.Map('map', {
+            center: [43.611423, 39.730661],
+            zoom: 16,
+            controls: ['zoomControl']
+        });
+
+        var newcoord = myMap.getGlobalPixelCenter();
+
+        if (window.innerWidth < 768) {
+            newcoord[1] += 200;
+        }
+        else {
+            newcoord[0] -= 420;
+        }
+        myMap.setGlobalPixelCenter(newcoord);
+
+        var myPlacemark = new ymaps.Placemark([43.611423, 39.730661], {}, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/mark.svg',
+            iconImageSize: [33, 47],
+            iconImageOffset: [-16, -47]
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+
+        myMap.balloon.open([43.612323, 39.730661], '<div class="contacts__mark-name">Адрес</div><div class="contacts__mark-address">Сочи, Гагарина 67а</div>', {
+            closeButton: false
+        });
+
+        myMap.behaviors.disable('scrollZoom');
+    });
 }

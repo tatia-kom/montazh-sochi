@@ -128,8 +128,12 @@
       }
     }
 
-    &--active, &:hover {
+    &--active {
       border-color: $yellow;
+      color: $black;
+    }
+
+    &:hover {
       color: $black;
     }
 
@@ -171,7 +175,7 @@
     }
 
     &:hover {
-      border-color: $yellow;
+      color: #3F87F5;
     }
   }
 
@@ -195,9 +199,39 @@
       background: url('../img/arrow-small-grey.svg');
       top: 3px;
       left: 0;
+      transition: 0.3s;
+      opacity: 1;
 
       @media (max-width: $md) {
         top: 1px;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 11px;
+      height: 11px;
+      transition: 0.3s;
+      background: url('../img/arrow-small-blue.svg');
+      top: 3px;
+      left: 0;
+      opacity: 0;
+
+      @media (max-width: $md) {
+        top: 1px;
+      }
+    }
+
+    &:hover {
+      color: #3F87F5;
+
+      &:before {
+        opacity: 0;
+      }
+      &:after {
+        opacity: 1;
       }
     }
   }

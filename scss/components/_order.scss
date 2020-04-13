@@ -1,0 +1,191 @@
+@import "layout/var";
+
+.order {
+  padding: 160px 0 48px;
+  overflow: hidden;
+
+  @media (max-width: $lg) {
+    padding-top: 80px;
+  }
+
+  @media (max-width: $sm) {
+    padding: 60px 0;
+  }
+
+  &__title {
+    text-align: left;
+    margin-left: 115px;
+
+    @media (max-width: $md) {
+      margin-left: 0;
+    }
+  }
+
+  &__slider {
+    overflow: visible!important;
+
+    .slick-list {
+      overflow: visible;
+    }
+
+    @media (max-width: $sm) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    @media (max-width: $xs) {
+      margin-top: 16px;
+    }
+  }
+
+  &__slide {
+    padding: 112px 11px;
+    transition: 0.3s;
+    outline: none;
+
+    @media (max-width: $md) {
+      padding: 60px 11px;
+    }
+
+    @media (max-width: $sm) {
+      width: calc(50% - 16px);
+      flex-shrink: 0;
+      padding: 0;
+    }
+
+    @media (max-width: $xs) {
+      width: calc(50% - 8px);
+    }
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        .order__icon:after {
+          content: '#{$i}.';
+          position: absolute;
+          display: block;
+          bottom: 0;
+          right: 0;
+          color: #3F87F5;
+          font-weight: bold;
+          font-size: 22px;
+
+          @media (max-width: $xs) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    &:not(.slick-active) {
+      opacity: 0;
+      pointer-events: none;
+
+      @media (max-width: $sm) {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__item {
+    transition: 0.3s;
+    padding: 40px 32px;
+
+    @media (max-width: $sm) {
+      padding: 0;
+      margin-top: 32px;
+    }
+
+    &:hover {
+      box-shadow: 0px 8px 112px rgba(0, 0, 0, 0.12);
+
+      @media (max-width: $md) {
+        box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.12);
+      }
+
+      @media (max-width: $sm) {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__icon {
+    border: 4px solid #F8F8F9;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: $xs) {
+      width: 80px;
+      height: 80px;
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    margin-top: 32px;
+    min-height: 56px;
+
+    @media (max-width: $lg) {
+      min-height: 84px;
+    }
+
+    @media (max-width: $xs) {
+      font-size: 18px;
+      margin-top: 16px;
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: -80px;
+    display: block;
+    width: 64px;
+    height: 64px;
+    background-size: 21px 21px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid transparent;
+    font-size: 0;
+    color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &.slick-prev {
+      background-image: url('../img/arrow-middle-black.svg');
+      transform: scale(-1, 1);
+      z-index: 100;
+      right: 64px;
+    }
+
+    &.slick-next {
+      background-image: url('../img/arrow-middle-black.svg');
+      right: 0;
+    }
+
+    &.slick-disabled {
+      opacity: 0.24;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+
+    &:hover {
+      border-color: rgba(28,30,32, 0.24);
+    }
+  }
+}

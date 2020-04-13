@@ -83,6 +83,7 @@
     line-height: 130%;
     padding: 24px 30% 24px 24px;
     position: relative;
+    color: $black;
 
     @media (max-width: $md) {
       font-size: 18px;
@@ -96,6 +97,7 @@
     @media (max-width: $xs) {
       font-size: 18px;
       padding: 24px;
+      align-self: center;
     }
 
     &:after {
