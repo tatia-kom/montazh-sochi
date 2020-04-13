@@ -2,12 +2,21 @@
 
 .header {
   padding: 28px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  background: white;
+  transition: 0.3s;
+
+  &--scroll {
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.12);
+  }
 
   @media (max-width: $sm) {
     padding: 15px 0;
     height: 67px;
     overflow: hidden;
-    position: relative;
     transition: 0.3s;
 
     &--opened_menu {
@@ -243,7 +252,7 @@
       display: block;
       margin-left: auto;
       margin-right: 20px;
-      padding: 0 19px;
+      padding: 3px 19px 0;
       height: 36px;
       position: relative;
 

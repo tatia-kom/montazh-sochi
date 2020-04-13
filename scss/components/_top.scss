@@ -3,13 +3,20 @@
 .top {
   height: 681px;
   position: relative;
+  margin-top: 116px;
 
   @media (max-width: $md) {
     height: 400px;
+    margin-top: 99px;
   }
 
   @media (max-width: $sm) {
     height: auto;
+    margin-top: 67px;
+  }
+
+  @media (max-width: $xs) {
+    margin-top: 64px;
   }
 
   &__img {
