@@ -5,8 +5,12 @@
   position: relative;
   margin-top: 116px;
 
+  @media (max-width: $lg) {
+    height: 638px;
+  }
+
   @media (max-width: $md) {
-    height: 400px;
+    height: 528px;
     margin-top: 99px;
   }
 
@@ -19,27 +23,44 @@
     margin-top: 64px;
   }
 
+  .container {
+    position: relative;
+  }
+
   &__img {
     position: absolute;
     top: 0;
     right: 0;
-    width: 74%;
+    width: 985px;
     height: 100%;
     background-size: cover;
     background-position: center;
 
+    @media (max-width: $lg) {
+      width: 930px;
+    }
+
     @media (max-width: $md) {
-      width: 60%;
+      width: 770px;
     }
 
     @media (max-width: $sm) {
       width: 100%;
       position: relative;
-      height: 400px;
+      height: 494px;
     }
 
     @media (max-width: $xs) {
-      height: 264px;
+      height: auto;
+    }
+
+    img {
+      display: none;
+      max-width: 100%;
+
+      @media (max-width: $xs) {
+        display: block;
+      }
     }
   }
 

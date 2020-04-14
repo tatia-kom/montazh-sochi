@@ -79,8 +79,8 @@
     }
 
     &:not(.slick-active) {
-      opacity: 0;
-      pointer-events: none;
+      //opacity: 0;
+      //pointer-events: none;
 
       @media (max-width: $sm) {
         opacity: 1;

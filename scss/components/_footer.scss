@@ -70,6 +70,26 @@
       height: 24px;
       background: url('../img/insta.svg');
     }
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      width: 24px;
+      height: 24px;
+      background: url('../img/insta-yellow.svg');
+      transition: 0.3s;
+    }
+
+    &:hover {
+      color: $yellow;
+
+      &:after {
+        opacity: 1;
+      }
+    }
   }
 
   &__copyright {

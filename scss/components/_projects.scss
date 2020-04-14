@@ -150,15 +150,6 @@
     font-size: 18px;
     line-height: 160%;
     margin-top: 32px;
-    overflow: auto;
-
-    @media (max-width: $sm) {
-      height: 200px;
-    }
-
-    @media (max-width: $xs) {
-      height: 290px;
-    }
 
     p {
       margin-bottom: 32px;
