@@ -126,6 +126,10 @@
     @media (max-width: $sm) {
       padding: 0 0 30px;
     }
+
+    @media (max-width: $xs) {
+      padding-bottom: 10px;
+    }
   }
 
   &__name {
@@ -140,7 +144,7 @@
 
     @media (max-width: $xs) {
       margin-right: 90px;
-      margin-bottom: 48px;
+      margin-bottom: 10px;
       height: 56px;
     }
   }
@@ -151,8 +155,16 @@
     line-height: 160%;
     margin-top: 32px;
 
+    @media (max-width: $xs) {
+      margin-top: 16px;
+    }
+
     p {
       margin-bottom: 32px;
+
+      @media (max-width: $xs) {
+        margin-bottom: 10px;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -176,7 +188,16 @@
     }
 
     @media (max-width: $xs) {
-      height: 343px;
+      height: auto;
+    }
+
+    img {
+      display: none;
+      width: 100%;
+
+      @media (max-width: $xs) {
+        display: block;
+      }
     }
   }
 
