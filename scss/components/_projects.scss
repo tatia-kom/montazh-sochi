@@ -104,11 +104,7 @@
 
   &__item {
     display: flex;
-    height: 550px;
-
-    @media (max-width: $md) {
-      height: 450px;
-    }
+    height: 450px;
 
     @media (max-width: $sm) {
       flex-direction: column-reverse;
@@ -173,14 +169,10 @@
   }
 
   &__img {
-    width: 765px;
+    width: 600px;
     flex-shrink: 0;
     background-size: cover;
     background-position: center;
-
-    @media (max-width: $md) {
-      width: 600px;
-    }
 
     @media (max-width: $sm) {
       width: 100%;
