@@ -121,10 +121,19 @@ $(document).ready(function() {
         }
 
         if (!err) {
-            $('#call-modal').removeClass('modal--opened');
-            $('body').addClass('opened-modal');
-            $('#thank-modal').addClass('modal--opened');
-            $('.contacts__input').val('').removeClass('contacts__input--full');
+            $.post({
+                url: '/site/mail-to',
+                data: {'name': name.val(), 'phone': phone.val()},
+                success: function(res) {
+                    var response = $.parseJSON(res);
+                    if (response['sent'] == true) {
+                        $('#call-modal').removeClass('modal--opened');
+                        $('body').addClass('opened-modal');
+                        $('#thank-modal').addClass('modal--opened');
+                        $('.contacts__input').val('').removeClass('contacts__input--full');
+                    }
+                }
+            });
         }
     });
 
@@ -158,6 +167,8 @@ function initMap() {
 
         if (window.innerWidth < 768) {
             newcoord[1] += 200;
+
+            myMap.behaviors.disable(['drag', 'rightMouseButtonMagnifier']);
         }
         else {
             newcoord[0] -= 420;

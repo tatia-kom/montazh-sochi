@@ -216,7 +216,7 @@ function subcategoriesDesktop() {
 }
 
 function subcategoriesMobile() {
-    var tabsCount = $('.subcategories__tab:not(.subcategories__tab--open)').length;
+    /*var tabsCount = $('.subcategories__tab:not(.subcategories__tab--open)').length;
     if (tabsCount > 3) {
         $('.subcategories__tab--open').text('Показать больше');
         $('.subcategories__tab:not(.subcategories__tab--open)').each(function(index) {
@@ -232,7 +232,7 @@ function subcategoriesMobile() {
             $(this).hide();
             $('.subcategories__hidden-tabs').addClass('subcategories__hidden-tabs--opened');
         });
-    }
+    }*/
 }
 
 function subcategoriesFull() {
